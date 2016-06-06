@@ -47,6 +47,15 @@ rosserial_configure_client(
 rosserial_add_client_target(firmware roslay ALL)
 rosserial_add_client_target(firmware roslay-upload)
 
+add_executable(roslaytest
+  src/roslaytest.cpp
+)
+
+target_link_libraries(roslaytest
+  ${catkin_LIBRARIES}
+)
+
+
 #############
 ## Install ##
 #############
