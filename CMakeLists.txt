@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(roslay)
 
 find_package(catkin REQUIRED COMPONENTS
+  message_generation
   roscpp
   rosserial_arduino
   rosserial_client
@@ -11,6 +12,14 @@ find_package(catkin REQUIRED COMPONENTS
 ################################################
 ## Declare ROS messages, services and actions ##
 ################################################
+
+add_message_files(
+  FILES
+  Relay.msg
+)
+
+generate_messages(
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -22,7 +31,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES roslay
-  CATKIN_DEPENDS roscpp rosserial_arduino rosserial_client std_msgs
+  CATKIN_DEPENDS message_runtime roscpp rosserial_arduino rosserial_client std_msgs
 #  DEPENDS system_lib
 )
 

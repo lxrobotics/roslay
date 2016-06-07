@@ -23,14 +23,14 @@ void handleInvalidValue         ();
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "ardumotetest");
+  ros::init(argc, argv, "roslaytest");
   
   ros::NodeHandle node_handle;
 
-  /* Create the two service clients for the two services */
-
-
+  /* Create the publisher for sending relay messages to the arduino */
   
+  ros::Publisher relay_publisher = node_handle.advertise<std_msgs::Bool>("/relay", 10);
+
   /* Provide a crude menu for selecting which service one wants to invoke */
 
   char cmd = 0;
