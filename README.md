@@ -4,10 +4,7 @@ Control an LXRobotics Relay Shield via ROS.
 ## Interface
 
 ### Subscribed Topics
-* **`/relay1`** ([std_msgs/Bool])
-* **`/relay2`** ([std_msgs/Bool])
-* **`/relay3`** ([std_msgs/Bool])
-* **`/relay4`** ([std_msgs/Bool])
+* **`/relay`** ([roslay/Relay])
 
 Turn the relay 1/2/3/4 on the relay shield on or off.
 
@@ -26,5 +23,5 @@ The device node under which the Arduino registers itself with the Arduino Uno.
 
 The baud rate which is used for the communication between the PC and the Arduino Uno.
 
-[std_msgs/Bool]: http://docs.ros.org/api/std_msgs/html/msg/Bool.html
+[roslay/Relay]: https://github.com/lxrobotics/roslay/blob/master/msg/Relay.msg
 
